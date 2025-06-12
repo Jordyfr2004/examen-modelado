@@ -22,6 +22,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '22.x'
+        working-directory: agent.ui
 
       - name: npm install, build, and test
         run: |
@@ -33,7 +34,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: node-app
-          path: .
+          path: agent-ui
 
   deploy:
     runs-on: ubuntu-latest
